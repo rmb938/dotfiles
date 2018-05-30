@@ -1,0 +1,65 @@
+decoration.ssd headerbar.titlebar {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    min-height: 0;
+}
+
+decoration.ssd headerbar.titlebar button.titlebutton {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    min-height: 0;
+}
+
+window.ssd headerbar.titlebar {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    min-height: 0;
+}
+
+window.ssd headerbar.titlebar button.titlebutton {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    min-height: 0;
+}
+
+.terminal-titlebar {
+    min-height: 0;
+    margin: 0; padding: 0;
+    font-size: 11px;
+    line-height: 15px;
+}
+
+.terminal-titlebar box {
+    margin: 0; padding: 0; border: 0;
+    min-height: 0;
+}
+
+.terminal-titlebar > button {
+    height: 15px !important;
+    min-height: 0 !important;
+    transform: scale(0.5, 0.5);
+    padding: 0; margin: 0; line-height: 0; min-height: 11x;
+}
+
+.terminal-titlebar > button image {
+    padding: 0; margin: 0;
+    -gtk-icon-transform: scale(0.5, 0.5);
+}
+
+label.tilix-terminal-title {
+    min-height: 0 !important;
+    font-size: 15px;
+}
+label.tilix-terminal-title > * {
+    font-size: 15px;
+}
+
+notebook.tilix-background header {
+    font-size: 15px;
+    padding: 0; margin: 0; line-height: 0; min-height: 11px;
+    height: 15px;
+}
+notebook.tilix-background * {
+    font-size: 15px;
+    padding: 0; margin: 0; line-height: 0; min-height: 11px;
+}
