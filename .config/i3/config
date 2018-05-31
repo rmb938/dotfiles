@@ -241,7 +241,8 @@ exec gtk-launch firefox
 exec gtk-launch discord
 
 # Start Windows VM viewer
-exec "looking-glass-client -K 120 -o opengl:vsync=0 -M -j -r &"
+set $looking_glass "killall looking-glass-client; looking-glass-client -K 120 -o opengl:vsync=0 -s -j -r &"
+exec $looking_glass
 
 ### Keybindss
 
@@ -257,7 +258,7 @@ bindsym $mod+mod1+Left move workspace to output left
 bindsym $mod+mod1+Right move workspace to output right
 
 # Re-start Windows Display and Switch to it
-bindsym $mod+w exec ~/.config/i3/windows.sh $ws6
+bindsym $mod+w exec $looking_glass, workspace $ws6
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +5% # increase sound volume
