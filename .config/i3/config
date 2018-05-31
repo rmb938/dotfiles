@@ -210,9 +210,6 @@ for_window [class="Gnome-calculator"] floating enable
 # Full screen
 for_window [class="looking-glass-client"] fullscreen enable
 
-# Focus on open
-for_window [class="Firefox"] focus
-
 ### Monitor Layout
 exec_always xrandr --output HDMI-1 --off --output DP-3 --mode 2560x1440 --pos 2560x0 --rotate normal --output DP-2 --mode 2560x1440 --pos 0x0 --rotate normal --output DP-1 --off --output DVI-D-1 --off
 
@@ -230,8 +227,9 @@ exec_always xmodmap -e 'add mod3 = Scroll_Lock'
 # Start auth agent
 exec_always /usr/libexec/polkit-gnome-authentication-agent-1 &
 
-# Start compton
-exec --no-startup-id compton -b
+# Start compositor
+# Can't add -b because it makes the screen empty
+exec --no-startup-id compton --backend glx --vsync opengl-swc -f
 
 # Start terminal
 exec tilix
@@ -248,7 +246,7 @@ exec "looking-glass-client -K 120 -o opengl:vsync=0 -M -j -r &"
 ### Keybindss
 
 # Open firefox and switch to workspace
-bindsym $mod+mod1+f exec gtk-launch firefox
+bindsym $mod+mod1+f exec gtk-launch firefox, workspace $ws2
 
 # Launch blank panel
 bindsym $mod+o open
@@ -267,7 +265,7 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -5% # 
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle # mute sound
 
 # Media player controls
-bindsym XF86AudioPlayPause exec playerctl play # These do not work with a combo play/pause button
+bindsym XF86AudioPlay exec playerctl play      # These do not work with a combo play/pause button
 bindsym XF86AudioPause exec playerctl pause    #
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
