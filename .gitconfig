@@ -3,3 +3,5 @@
 [user]
 	email = rmb1993@gmail.com
 	name = Ryan Belgrave
+[diff "sopsdiffer"]
+	textconv = sops -d
