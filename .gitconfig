@@ -1,7 +1,7 @@
 [core]
 	excludesfile = /home/rbelgrave/.gitignore_global
 [user]
-	email = rmb1993@gmail.com
+	email = ryan@belgrave.me
 	name = Ryan Belgrave
 [diff "sopsdiffer"]
 	textconv = sops -d
