@@ -225,7 +225,7 @@ exec_always feh --bg-scale /usr/share/backgrounds/f28/default/standard/f28.png
 exec --no-startup-id redshift -l 44.9790740:-93.2689130
 
 # Auto Locker
-exec --no-startup-id xautolock -time 0 -nowlocker "betterlockscreen --lock dim" -locker "betterlockscreen --lock dim"
+exec --no-startup-id xautolock -time 10 -nowlocker "betterlockscreen --lock dim" -locker "betterlockscreen --lock dim"
 
 # Turn on numlock
 exec_always numlockx on
@@ -259,7 +259,7 @@ exec $looking_glass
 ### Keybindss
 
 # Lock Screen
-bindsym $mod+shift+x exec xautolock -locknow
+bindsym $mod+shift+x exec --no-startup-id xautolock -locknow
 
 # Multi-screen screenshots with scrot
 bindsym --release Print exec scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`' # All screens
