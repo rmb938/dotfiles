@@ -224,6 +224,9 @@ exec_always feh --bg-scale /usr/share/backgrounds/f28/default/standard/f28.png
 # Redshift
 exec --no-startup-id redshift -l 44.9790740:-93.2689130
 
+# Auto Locker
+exec --no-startup-id xautolock -time 0 -nowlocker "betterlockscreen --lock dim" -locker "betterlockscreen --lock dim"
+
 # Turn on numlock
 exec_always numlockx on
 
@@ -255,6 +258,9 @@ exec $looking_glass
 
 ### Keybindss
 
+# Lock Screen
+bindsym $mod+shift+x exec xautolock -locknow
+
 # Multi-screen screenshots with scrot
 bindsym --release Print exec scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`' # All screens
 
@@ -276,9 +282,9 @@ bindsym $mod+mod1+Right move workspace to output right
 bindsym $mod+w exec $looking_glass, workspace $ws6
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% # increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% # decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +5% # increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -5% # decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle # mute sound
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play      # These do not work with a combo play/pause button
