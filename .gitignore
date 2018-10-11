@@ -1,0 +1,34 @@
+# Ignore Everything
+*
+
+# Include git stuff
+!.gitignore
+!.gitconfig
+!.gitignore_global
+
+# Except sepcific things in the ~/.config folder
+!.config
+
+# Including i3
+!.config/i3
+!.config/i3/*
+
+# Including fish
+!.config/fish
+!.config/fish/config.fish
+!.config/fish/functions
+!.config/fish/functions/*
+
+# GTK Stuff
+!.gtkrc-2.0
+!.config/gtk-3.0
+!.config/gtk-3.0/settings.ini
+!.config/gtk-3.0/gtk.css
+
+# Dunst
+!.config/dunst
+!.config/dunst/dunstrc
+
+# dconf
+!.config/dconf
+!.config/dconf/user
