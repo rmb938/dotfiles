@@ -100,7 +100,7 @@ set $ws3 "3: "
 set $ws4 "4: "
 set $ws5 "5: "
 set $ws6 "6: "
-set $ws7 "7"
+set $ws7 "7: "
 set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
@@ -191,6 +191,7 @@ assign [class="discord"] $ws5
 assign [class="Slack"] $ws5
 assign [class="Steam"] $ws4
 assign [class="looking-glass-client"] $ws6
+assign [class="net-runelite-client-RuneLite"] $ws7
 # assign [class="jetbrains-idea"] $ws3
 # assign [class="jetbrains-goland"] $ws3
 
@@ -247,7 +248,7 @@ exec tilix
 exec gtk-launch firefox
 
 # Start discord
-exec discord &
+exec Discord &
 
 # Start slack
 exec slack &
@@ -282,9 +283,9 @@ bindsym $mod+mod1+Right move workspace to output right
 bindsym $mod+w exec $looking_glass, workspace $ws6
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +5% # increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -5% # decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle # mute sound
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 2 +5% # increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 2 -5% # decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 2 toggle # mute sound
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play      # These do not work with a combo play/pause button

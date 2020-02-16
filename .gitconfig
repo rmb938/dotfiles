@@ -3,5 +3,8 @@
 [user]
 	email = ryan@belgrave.me
 	name = Ryan Belgrave
+	signingkey = 251F11166B68842A
 [diff "sopsdiffer"]
 	textconv = sops -d
+[commit]
+	gpgsign = true
